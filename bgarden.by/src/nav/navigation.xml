@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='navigation.xsl'?>
+<pages>
+	<page>
+		<name>Главная</name>
+		<url>/bgarden.by/index.jsp</url>
+	</page>
+	<page>
+		<name>История основания</name>
+		<url>/bgarden.by/history.jsp</url>
+	</page>
+	<page>
+		<name>Флора сада</name>
+		<url>/bgarden.by/flora.jsp</url>
+	</page>
+	<page>
+		<name>Фотогалерея</name>
+		<url>/bgarden.by/photo.jsp</url>
+	</page>
+	<page>
+		<name>Контакты</name>
+		<url>/bgarden.by/about.jsp</url>
+	</page>
+</pages>

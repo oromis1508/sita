@@ -1,0 +1,213 @@
+@CHARSET "UTF-8";
+
+.wrapper{
+	background: url("/bgarden.by/images/background.jpg");
+}
+
+header{
+	padding: 1.3vw 0 0 0;
+}
+
+.headimg {
+	width: 25%;
+	margin-left: 35.3vw;
+}
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+img{
+	border: 0;
+}
+
+p{
+	font: 0.9vw Arial;
+	color: #000037;
+	line-height:1.5;
+	text-align: justify;
+	padding: 0.3vw 3vw;
+	text-indent: 2vw;
+}
+
+h1{
+	font: 1.7vw Monotype Corsiva;
+	color:#006400;
+	line-height:2;
+}
+
+h2{
+	font: 1.1vw Arial;
+	color:#008000;
+	line-height:1.5;
+	padding: 1.5vw 3vw;
+}
+
+a{
+	font: 1.3vw Monotype Corsiva;
+}
+
+main{
+	width: 60%;
+	margin: 0 auto;
+	min-height: 33vw;
+	background-image: linear-gradient(to top, rgba(205, 209, 208, 0.5), rgba(243, 245, 240, 0.5),
+										  rgba(221, 227, 225, 0.5), rgba(214, 216, 215, 0.5));
+}
+
+main h1{
+	padding-left: 3vw;
+	padding-top: 0.5vw;
+}
+
+main li{
+	font: 0.8vw Arial;
+	color: #283625;
+	line-height:1.5;
+	text-align: justify;
+	padding: 0.3vw 3vw;
+	text-indent: 2vw;
+	list-style-position: inside;
+}
+
+h1.welcome{
+	text-align: center;
+	padding: 0.9vw 0 0 0;
+}	
+
+.funktions{
+	margin: 0 15vw;
+}
+
+.funktions a{
+	display: inline-block;
+}
+
+.funktion{
+	width: 12vw;
+	height: 15.7vw;
+	float: left;
+	border: 1px solid #D1EEEE;
+	margin: 0.5vw;
+	color: #104a85;
+	font:1.6vw Monotype Corsiva;
+	text-align: center;
+	background-image: linear-gradient(to top, rgba(205, 209, 208, 0.5), rgba(243, 245, 240, 0.5),
+										  rgba(221, 227, 225, 0.5), rgba(214, 216, 215, 0.5));
+}
+
+.funktion img{
+	width: 3vw;
+	height: 3vw;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	float:left;
+	}
+	
+#search{
+	width: 10vw;
+	height: 1.8vw;
+	font: 1vw Arial;
+	margin-top: 1.9vw;
+}
+
+nav{
+	border: 1px solid #D1EEEE;
+ 	width: 18%;
+ 	position: fixed;
+ 	margin-top: 11.7vw;
+ 	margin-left: 0.9vw;
+}
+
+nav li{
+	background: radial-gradient(#54FF9F, #BFEFFF);
+	list-style:none;
+	text-align:center;
+	padding: 0.5vw 1vw;
+}
+
+nav li a{
+	text-decoration: none;
+	color: #00B2EE;
+}
+
+nav li a:hover{
+	text-decoration: underline;
+	color: #1874CD;
+}
+
+.main-img{
+	width: 50%;
+	margin: 2.2vw auto 0.9vw auto;
+	display: block;
+}
+
+footer {
+	width:100%;
+	display:inline-block;
+	background: linear-gradient(to top, rgba(205, 209, 208, 0.25), rgba(243, 245, 240, 0.25),
+										  rgba(221, 227, 225, 0.25), rgba(214, 216, 215, 0.25));
+}
+
+footer p{
+	color: black;
+	font: 0.7vw Arial;
+	float: left;
+	text-indent: 0;
+}
+
+footer a{
+	font: 0.9vw Monotype Corsiva;
+	text-decoration: none;
+	color:#006400;
+}
+
+.auth{
+	width: 10%;
+	position: static;
+	float: right;
+	color: black;
+	font: 0.7vw Arial;
+	padding-right: 2vw;
+	padding-top: 1vw;
+}
+
+.field {
+	clear:both; 
+	text-align:right;
+}
+
+.auth label {
+	float:left;
+}
+
+.head_search{
+	position: absolute;
+	float: left;
+	font: 1vw Arial;
+	line-height:1;
+	padding-left: 5vw;
+	padding-top: 2vw;
+}
+
+.head_search #search{
+	margin-top: 0.5vw;
+}
+
+.gallery img{
+	height: 15vw;
+	padding:1vw;
+}
+
+.gallery{
+	padding-left:7.5vw;
+}
+
+#searchimg{
+	width: 11vw;
+	height: 9vw;
+	padding-top:1vw;
+	margin:0.5vw; 
+}
