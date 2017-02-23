@@ -23,14 +23,14 @@ public class Logout extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String login = request.getParameter("login");
-		String pass = request.getParameter("pass");
 		HttpSession session = request.getSession();
+		session.setAttribute("auth", false);
+		
 		String path = getServletContext().getRealPath("header.jsp");
 		
-		new Autentification(login, pass, path, session).logout();
-		String str = request.getRequestURI();
-		response.sendRedirect("index.jsp");
+		new Autentification(path, session).logout();
+//		String str = request.getRequestURI();
+//		response.sendRedirect("index.jsp");
 	}
 
 }

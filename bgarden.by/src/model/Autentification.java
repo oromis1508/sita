@@ -16,14 +16,14 @@ public class Autentification {
 	private String pass;
 	private String path;
 	
-	private String before = "<form action=\"Auth\" method=\"post\">";
+	private String before = "<form id=\"authForm\">";
 	
-	private String after = "<p>Здравствуйте, администратор!<BR>\n"
+	private String after = "<form id=\"logoutForm\">\n"
+			+ "<p>Здравствуйте, администратор!<BR>\n"
 			+ "<a href=\"change.jsp\">Изменить логин/пароль</a><BR>\n"
-			+ "<form action=\"Logout\" method=\"post\">\n"
-			+"<input type=\"submit\" name=\"logout\" value=\"Выйти\">\n"
+			+"<input type=\"submit\" value=\"Выйти\" id=\"logout\">\n"
 			+"</form>\n"
-			+ "<form action=\"Auth\" method=\"post\" style=\"visibility: hidden;\">";
+			+ "<form id=\"authForm\" style=\"visibility: hidden;\">";
 	
 	
 	private String valid_login = "admin";
@@ -32,6 +32,11 @@ public class Autentification {
 	public Autentification(String login, String pass, String path, HttpSession session) {
 		this.login = login;
 		this.pass = pass;
+		this.path = path;
+		this.session = session;
+	}
+	
+	public Autentification(String path, HttpSession session) {
 		this.path = path;
 		this.session = session;
 	}
@@ -56,8 +61,8 @@ public class Autentification {
 		else
 			Files.write(path,
 		    new String(Files.readAllBytes(path), charset)
-		    	.replace("<input type=\"submit\" name=\"submit\" value=\"Авторизация\">",
-		    			"<input type=\"submit\" name=\"submit\" value=\"Авторизация\">"+
+		    	.replace("<input type=\"submit\" value=\"Авторизация\" id=\"submit\"/>",
+		    			 "<input type=\"submit\" value=\"Авторизация\" id=\"submit\"/>"+
 		    	"<br><font size=\"2\" color=\"red\" face=\"Arial\">Не верно введён логин/пароль</font>")
 		    	.getBytes(charset));
 	}
@@ -68,8 +73,14 @@ public class Autentification {
 		Charset charset = StandardCharsets.UTF_8;
 		
 		Files.write(path,
+				new String(Files.readAllBytes(path), charset)
+				    .replace(
+				    "<br><font size=\"2\" color=\"red\" face=\"Arial\">Не верно введён логин/пароль</font>","")
+				    	.getBytes(charset));
+		
+		if(session.getAttribute("auth")==null || !(boolean)session.getAttribute("auth"))
+		Files.write(path,
 	    	new String(Files.readAllBytes(path), charset).replace(after, before).getBytes(charset));
-		session.setAttribute("auth", false);
 	}
 
 	public void setValid_login(String valid_login) {

@@ -21,7 +21,7 @@ public class ResponsePage {
 		+"<meta charset=\"UTF-8\">\n"
 		+"<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">\n"
 		+"<link rel=\"stylesheet\" type=\"text/css\" href=\"css/catalog.css\">\n"
-		+"<script src=\"js/script.js\" type=\"text/javascript\"></script>"
+//		+"<script src=\"js/script.js\" type=\"text/javascript\"></script>"
 		+"<title>Каталог растений ботанического сада</title>\n"
 		+"</head>\n"
 		+"<body>\n"
@@ -68,18 +68,19 @@ public class ResponsePage {
 			
 			if(session.getAttribute("auth")!=null && (boolean)session.getAttribute("auth"))
 			{
-				bw.write("<form id=\"editform"
-						+ i
-						+ "\">\n");
-			for(int j=0; j<myModel.getColumnCount()-1; j++)
+				bw.write("<form id=\"editform\">\n");
+			for(int j=1; j<myModel.getColumnCount(); j++)
 				bw.write("<input type=\"text\" name=\""
 						+ myModel.getColumnName(j)
 						+ "\" value=\""
 						+ myModel.getValueAt(i, j).toString() 
 						+ "\" style=\"visibility: hidden;\">\n");
-			bw.write("<button name=\"edit\">Редактировать</button>");
-			bw.write("<button name=\"delete\">Удалить</button>");
+			bw.write("<button id=\"edit"
+					+ i
+					+ "\" onclick=\"goEdit();\">Редактировать</button>");
+			bw.write("<button id=\"delete\" onclick=\"delete()\">Удалить</button>");
 			bw.write("</form>");
+			bw.write("<button onclick=\"goEdit();\">Редактировать</button>");
 			}	
 						
 			bw.write("</main>\n"

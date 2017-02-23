@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+
+.searchForm{
+	padding-left: 9vw;
+}
+
+.searchForm h1{
+	padding-left: 14.5vw;
+}
+
+.searchField{
+	width: 20vw;
+	height: 7vw;
+	border: 1px solid #D1EEEE;
+	font: 0.9vw Arial;
+	color: #000037;
+	text-align: center;
+	line-height:2;
+	background-image: linear-gradient(to top, rgba(205, 209, 208, 0.7), rgba(243, 245, 240, 0.7),
+										  rgba(221, 227, 225, 0.7), rgba(214, 216, 215, 0.7));
+	vertical-align: top;
+}
+
+.searchField label{
+	line-height:3;
+}
+
+.searchField option{
+	font: 0.7vw Arial;
+}
+
+.searchField input{
+	height: 1vw;
+}
+
+#valueName, #valueFamily{
+	width: 10vw;
+}
+
+.radio{
+	vertical-align: sub;
+}
+
+.searchButton{
+	text-align: center;
+	width: 20vw;
+}
+
+.back{
+	float: right;
+}

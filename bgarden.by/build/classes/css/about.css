@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+
+.leftbar p{
+	line-height:1;
+}
+
+.rightbar{
+	width: 37vw;
+	vertical-align: top;
+}
+
+.rightbar td{
+	height:3.5vw;
+	font: 0.9vw Arial;
+	color: #000037;
+	text-align: justify;
+	padding: 0.3vw 3vw;
+}
+
+.bottombar{
+	text-align: center;
+}
+
+.bottombar img{
+	width: 55vw;
+	padding-left: 2.5vw;
+}
+.bottombar p{
+	text-align: center;
+	text-indent: 0;
+}

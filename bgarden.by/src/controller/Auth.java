@@ -29,8 +29,8 @@ public class Auth extends HttpServlet {
 		String path = getServletContext().getRealPath("header.jsp");
 		
 		new Autentification(login, pass, path, session).modify();
-		String str = request.getRequestURI();
-		response.sendRedirect("index.jsp");
+//		String str = request.getRequestURI();
+//		response.sendRedirect("index.jsp");
 	}
 
 }
