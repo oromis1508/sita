@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/search.css">
+<script src="js/script.js" type="text/javascript"></script>
 <title>Поиск по каталогу</title>
 </head>
 <body>

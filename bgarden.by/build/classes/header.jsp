@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="js/script.js" type="text/javascript"></script>
 </head>
 <body>
 <header>

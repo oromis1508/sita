@@ -146,6 +146,22 @@ footer a{
 	float:left;
 }
 
+#logoutForm{
+	margin-top:-1vw;
+	margin-left:-5vw;
+	width: 30vw;
+}
+
+#logoutForm p{
+	text-indent: 0;
+}
+
+#logoutForm a{
+	text-decoration: none;
+	font-size: 1vw;
+	color: gray;
+}
+
 .head_search{
 	position: absolute;
 	float: left;

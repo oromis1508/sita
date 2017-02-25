@@ -21,7 +21,9 @@ public class ResponsePage {
 		+"<meta charset=\"UTF-8\">\n"
 		+"<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">\n"
 		+"<link rel=\"stylesheet\" type=\"text/css\" href=\"css/catalog.css\">\n"
-//		+"<script src=\"js/script.js\" type=\"text/javascript\"></script>"
+		+"<script type=\"text/javascript\" src=\"js/jquery-1.10.2.min.js\"></script>\n"
+		+"<script src=\"js/script.js\" type=\"text/javascript\"></script>\n"
+		+"<script type=\"text/javascript\" src=\"js/jqcatalog.js\"></script>\n"
 		+"<title>Каталог растений ботанического сада</title>\n"
 		+"</head>\n"
 		+"<body>\n"
@@ -68,19 +70,18 @@ public class ResponsePage {
 			
 			if(session.getAttribute("auth")!=null && (boolean)session.getAttribute("auth"))
 			{
-				bw.write("<form id=\"editform\">\n");
-			for(int j=1; j<myModel.getColumnCount(); j++)
-				bw.write("<input type=\"text\" name=\""
-						+ myModel.getColumnName(j)
-						+ "\" value=\""
-						+ myModel.getValueAt(i, j).toString() 
-						+ "\" style=\"visibility: hidden;\">\n");
-			bw.write("<button id=\"edit"
-					+ i
-					+ "\" onclick=\"goEdit();\">Редактировать</button>");
-			bw.write("<button id=\"delete\" onclick=\"delete()\">Удалить</button>");
-			bw.write("</form>");
-			bw.write("<button onclick=\"goEdit();\">Редактировать</button>");
+				String[] names = {"id", "name", "type", "family", "life", "number"};
+				bw.write("<button class=\"editbtn\" data-action=\"edit\"");
+			for(int j=0; j<myModel.getColumnCount(); j++)
+				bw.write(" data-" + names[j]
+						+ "=\"" + myModel.getValueAt(i, j).toString() + "\"");
+			bw.write(">Редактировать</button>");
+			
+			bw.write("<button class=\"deletebtn\" data-action=\"delete\"");
+			for(int j=0; j<myModel.getColumnCount(); j++)
+				bw.write(" data-" + names[j]
+						+ "=\"" + myModel.getValueAt(i, j).toString() + "\"");
+			bw.write(">Удалить</button>");	
 			}	
 						
 			bw.write("</main>\n"
@@ -128,6 +129,9 @@ public class ResponsePage {
 		+"<meta charset=\"UTF-8\">\n"
 		+"<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">\n"
 		+"<link rel=\"stylesheet\" type=\"text/css\" href=\"css/catalog.css\">\n"
+		+"<script type=\"text/javascript\" src=\"js/jquery-1.10.2.min.js\"></script>\n"
+		+"<script src=\"js/script.js\" type=\"text/javascript\"></script>\n"
+		+"<script type=\"text/javascript\" src=\"js/jqcatalog.js\"></script>\n"
 		+"<title>Каталог растений ботанического сада</title>\n"
 		+"</head>\n"
 		+"<body>\n"
@@ -152,12 +156,46 @@ public class ResponsePage {
 				bw.write("<td>"
 						+myModel.getValueAt(i, j)
 						+"</td>");
+			
+			if(session.getAttribute("auth")!=null && (boolean)session.getAttribute("auth"))
+			{
+				String[] names = {"id", "name", "type", "family", "life", "number"};
+				bw.write("<td><button class=\"editbtn\" data-action=\"edit\"");
+			for(int j=0; j<myModel.getColumnCount(); j++)
+				bw.write(" data-" + names[j]
+						+ "=\"" + myModel.getValueAt(i, j).toString() + "\"");
+			bw.write(">Редактировать</button></td>");
+
+			bw.write("<td><button class=\"deletebtn\" data-action=\"delete\"");
+			for(int j=0; j<myModel.getColumnCount(); j++)
+				bw.write(" data-" + names[j]
+						+ "=\"" + myModel.getValueAt(i, j).toString() + "\"");
+			bw.write(">Удалить</button></td>");
+			bw.write("</tr>");
+			}	
+						
+			bw.write("</main>\n"
+					+ "<footer>\n"
+					+ myModel.getColumnName(myModel.getColumnCount()-1) + ": <span>"
+					+ myModel.getValueAt(i, myModel.getColumnCount()-1).toString() + "</span>\n"
+					+ "</footer>\n");
+			
+			
+			bw.write("</article>\n"
+					+"</td>\n");
+			if((i+1)%4==0)
+				bw.write("</tr>");
+			bw.flush();
 		}
 		
-		bw.write("</table>\n");
 		
-		bw.write("<ul class=\"nav_catalog\">"
-				+ "<li><a onclick=\"history.back();\">К блочному виду</a>"
+		bw.write("</table>\n");
+		bw.write("<ul class=\"nav_catalog\">");
+		
+		if(session.getAttribute("auth")!=null && (boolean)session.getAttribute("auth"))
+			bw.write("<li><a href=\"add.jsp\">Добавить запись</a>\n");
+		
+		bw.write("<li><a onclick=\"history.back();\">К блочному виду</a>"
 				+ "<li><a onclick=\"history.back();\">Назад</a>\n");
 		
 		bw.write("</main>\n"

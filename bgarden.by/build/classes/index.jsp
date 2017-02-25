@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/script.js" type="text/javascript"></script>
 <title>Национальный ботанический сад Респубники Беларусь</title>
 </head>
 <body>

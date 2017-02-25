@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.DeleteDB;
+import model.EditDB;
 import model.MyTableModel;
 
 /**
@@ -30,21 +31,15 @@ public class Action extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		if(request.getParameter("edit")!=null)
 		{ 
-			String[] names = {"Name", "Type", "Family", "Life", "Number"};
-			Cookie cookie = null;
-			for(int i=0; i<names.length;i++){
-				String str = request.getParameter(myModel.getColumnName(i+1));
-				cookie = new Cookie(names[i], str);
-				response.addCookie(cookie);}	
-			response.sendRedirect("edit.jsp");
+			new EditDB(request);
 		}
 		else
 			new DeleteDB(request);
 		
-		//response.sendRedirect("catalog");
+		response.sendRedirect("catalog");
 	}
 
 }

@@ -4,7 +4,9 @@
 <head>
 <meta rel="gallery" charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<script type="text/javascript" src="js/fancybox/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script src="js/script.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jqgallery.js"></script>
 <script type="text/javascript" src="js/fancybox/jquery.mousewheel.pack.js"></script>
 <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript" src="js/fancybox/jquery.fancybox.js"></script>

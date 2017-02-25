@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/history.css">
+<script src="js/script.js" type="text/javascript"></script>
 <title>История основания ботанического сада</title>
 </head>
 <body>

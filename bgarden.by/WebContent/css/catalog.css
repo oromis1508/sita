@@ -116,6 +116,6 @@ article footer span{
 	border: 1px solid silver;
 }
 
-#editform{
-	margin-top: -4vw;
+.deletebtn{
+	position: absolute;
 }

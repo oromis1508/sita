@@ -71,37 +71,3 @@ window.onload = function () {
 		xmlHttp.send(null);
 	}
 } 
-
-function goEdit() {
-	
-	var xmlHttp = newXMLHttpRequest();
-	
-	var elems = document.getElementById(this.id).form.elements.age;
-	
-	// Открыть соединение с сервером
-	xmlHttp.open("POST", "Action", true);
-	
-	xmlHttp.setRequestHeader("Content-Type", 
-      "application/x-www-form-urlencoded");
-	
-	// Передать запрос
-	xmlHttp.send("Name=" + elems[0] + "&Type=" + elems[1] + "&Family=" + elems[2]
-			   + "&Life=" + elems[3] + "&Number=" + elems[4]);
-	
-//	var elems = document.getElementById(this.id).form.elements.age;
-//	document.location.href = "edit.jsp";
-	
-//	document.getElementById("Name").value = elems[0];
-//	
-////	if(elems[1].equals(""))
-////	document.getElementById("Type");
-//	document.getElementById("Family").value = elems[2];;
-////	document.getElementById("Life");
-//	document.getElementById("Number").value = elems[4];
-	
-}
-
-$(document).ready(function(){
-	
-	$("a.photo").fancybox();
-});
