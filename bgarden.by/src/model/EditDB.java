@@ -45,9 +45,9 @@ public class EditDB extends ConnectDB {
 		{
 			query = "UPDATE description"
 					+ " SET Name = \'" + request.getParameter(newItems[0])
-					+ " , Type = \'" + request.getParameter(newItems[1])
-					+ " , Family = \'" + request.getParameter(newItems[2])
-					+ " , Life = \'" + request.getParameter(newItems[3])
+					+ "\' , Type = \'" + request.getParameter(newItems[1])
+					+ "\' , Family = \'" + request.getParameter(newItems[2])
+					+ "\' , Life = \'" + request.getParameter(newItems[3])
 					+ "\' WHERE Name = \'" + request.getParameter(oldItems[0]) + '\'';
 			stm.executeUpdate(query);
 		}

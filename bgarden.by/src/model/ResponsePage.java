@@ -164,28 +164,15 @@ public class ResponsePage {
 			for(int j=0; j<myModel.getColumnCount(); j++)
 				bw.write(" data-" + names[j]
 						+ "=\"" + myModel.getValueAt(i, j).toString() + "\"");
-			bw.write(">Редактировать</button></td>");
+			bw.write(">Редактировать</button><br>");
 
-			bw.write("<td><button class=\"deletebtn\" data-action=\"delete\"");
+			bw.write("<button class=\"deletebtn\" data-action=\"delete\"");
 			for(int j=0; j<myModel.getColumnCount(); j++)
 				bw.write(" data-" + names[j]
 						+ "=\"" + myModel.getValueAt(i, j).toString() + "\"");
 			bw.write(">Удалить</button></td>");
 			bw.write("</tr>");
 			}	
-						
-			bw.write("</main>\n"
-					+ "<footer>\n"
-					+ myModel.getColumnName(myModel.getColumnCount()-1) + ": <span>"
-					+ myModel.getValueAt(i, myModel.getColumnCount()-1).toString() + "</span>\n"
-					+ "</footer>\n");
-			
-			
-			bw.write("</article>\n"
-					+"</td>\n");
-			if((i+1)%4==0)
-				bw.write("</tr>");
-			bw.flush();
 		}
 		
 		

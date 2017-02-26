@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/about.css">
+<link rel="stylesheet" type="text/css" href="css/edit.css">
 <script src="js/script.js" type="text/javascript"></script>
 <title>Добавление новой записи</title>
 </head>
@@ -23,9 +23,7 @@
 		<td class="addField">
 		<label>Название:<input type="text" name="Name"></label>
 		</td>
-		</tr>
-		
-		<tr>
+
 		<td class="addField">
 		<label>Семейство:<input type="text" name="Family"></label><br>
 		</td>
@@ -41,9 +39,7 @@
 	  		<option value ="дерево">Дерево</option>
 		</select>
 		</td>
-		</tr>
-		
-		<tr>
+
 		<td class="addField">
 		<label>Продолжительность жизни:<br></label>
 		<select name="Life" size="4">
@@ -56,7 +52,7 @@
 		</tr>
 		
 		<tr>
-		<td class="addField">
+		<td colspan="2" class="addField">
 		<label>Количество растений:<input type="number" name="Number"></label><br>
 		</td>
 		</tr>
@@ -68,7 +64,7 @@
 <!-- 		</tr> -->
 		
 		<tr>
-		<td class="addButton">
+		<td colspan="2" class="addButton">
 			<input type="submit" value="Добавить запись">
 			<input type="button" onclick="history.back();" value="Назад">
 		</td>

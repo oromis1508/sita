@@ -40,7 +40,8 @@ $(document).ready(function(){
 			+"&new_number="+new_number,
 			cache:false,
 		});
-		else
-			location.href = "catalog";
+		
+		window.location.href = "catalog";
+		return false;
 	});
 });

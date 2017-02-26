@@ -22,12 +22,12 @@ public class CatalogRequest extends ForwardToJSP{
         super();
         cdb = new ConnectDB();
         myModel = new MyTableModel();
-        myModel.setData(cdb.setQuery());
     }
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		myModel.setData(cdb.setQuery());
 		String path = getServletContext().getRealPath("");
 		File catalog = new File(path, "/catalog.jsp");
 		File tableView = new File(path, "/tableView.jsp");
@@ -37,8 +37,6 @@ public class CatalogRequest extends ForwardToJSP{
 		page.response(path+tableView.getName(), myModel, true, request.getSession());
 		
 		super.forward(request, response, catalog.getName());
-		catalog.deleteOnExit();
-		tableView.deleteOnExit();
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

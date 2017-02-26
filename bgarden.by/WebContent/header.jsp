@@ -5,12 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="js/jqsetlogin.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
 
 	<% new Autentification(getServletContext().getRealPath("header.jsp"), request.getSession()).logout();%>
-	
 	<form action="search" method="get" class="head_search">
 	<label>Поиск по каталогу<BR>
 	<input type="search" name="search" id="search"></label><BR>

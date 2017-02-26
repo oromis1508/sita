@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -84,9 +83,6 @@ public class SearchRequest extends ForwardToJSP {
 		page.response(path+tableView.getName(), myModel, true, request.getSession());
 		
 		super.forward(request, response, searchRezult.getName());
-		
-		searchRezult.deleteOnExit();
-		tableView.deleteOnExit();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -104,8 +100,5 @@ public class SearchRequest extends ForwardToJSP {
 		page.response(path+tableView.getName(), myModel, true, request.getSession());
 		
 		super.forward(request, response, searchRezult.getName());
-		
-		searchRezult.deleteOnExit();
-		tableView.deleteOnExit();
 	}
 }

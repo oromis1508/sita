@@ -1,6 +1,12 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -9,7 +15,7 @@ import java.nio.file.Paths;
 
 import javax.servlet.http.HttpSession;
 
-public class Autentification {
+public class Autentification implements AuthInterface{
 
 	private HttpSession session;
 	private String login;
@@ -20,25 +26,45 @@ public class Autentification {
 	
 	private String after = "<form id=\"logoutForm\">\n"
 			+ "<p>Здравствуйте, администратор!<BR>\n"
-			+ "<a href=\"change.jsp\">Изменить логин/пароль</a><BR>\n"
+			+ "<a href=\"account.jsp\" id=\"account\">Изменить логин/пароль</a><BR>\n"
 			+"<input type=\"submit\" value=\"Выйти\" id=\"logout\">\n"
 			+"</form>\n"
 			+ "<form id=\"authForm\" style=\"visibility: hidden;\">";
 	
 	
-	private String valid_login = "admin";
-	private String valid_pass = "admin";
+	private String valid_login;
+	private String valid_pass;
 	
 	public Autentification(String login, String pass, String path, HttpSession session) {
 		this.login = login;
 		this.pass = pass;
 		this.path = path;
 		this.session = session;
+		init();
 	}
 	
 	public Autentification(String path, HttpSession session) {
 		this.path = path;
 		this.session = session;
+		init();
+	}
+	
+	public Autentification(){
+		init();
+	}
+	
+	private void init() {
+		try {
+			URL url = getClass().getResource("/");
+			BufferedReader br = new BufferedReader(new FileReader(new File(url.getPath()+"data")));
+			String[] str = br.readLine().split(",");
+			valid_login=str[0];
+			valid_pass=str[1];
+			br.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	public void modify() throws IOException {
@@ -83,11 +109,22 @@ public class Autentification {
 	    	new String(Files.readAllBytes(path), charset).replace(after, before).getBytes(charset));
 	}
 
-	public void setValid_login(String valid_login) {
-		this.valid_login = valid_login;
+	public void setValid_login_pass(String valid) {
+		try {
+			URL url = getClass().getResource("/");
+			BufferedWriter bw = new BufferedWriter(new FileWriter(url.getPath()+"data"));
+			bw.write(valid);
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-
-	public void setValid_pass(String valid_pass) {
-		this.valid_pass = valid_pass;
+	
+	public String getValid_login() {
+		return this.valid_login;
+	}
+	
+	public String getValid_pass() {
+		return this.valid_pass;
 	}
 }

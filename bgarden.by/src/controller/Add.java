@@ -24,6 +24,7 @@ public class Add extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		new AddDB(request);
-		request.getRequestDispatcher("catalog").forward(request, response);
+//		request.getRequestDispatcher("catalog").forward(request, response);
+		response.sendRedirect("catalog");
 	}
 }

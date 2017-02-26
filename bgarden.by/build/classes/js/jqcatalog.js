@@ -28,8 +28,9 @@ $(document).ready(function(){
 				$.ajax({
 				type:'POST',
 				url:"Action",
-				data:"id="+id+"&name="+name+"&type="+type+"&family="+family+"&life="+life+"&number="+number,
+				data:"id="+id+"&name="+name,
 				cache:false,
+				success: function(data) {location.href=data;}
 			});
 				}
 	});

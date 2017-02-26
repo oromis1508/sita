@@ -60,7 +60,8 @@ window.onload = function () {
 		// Передать запрос
 		xmlHttp.send("login=" + login + "&pass=" + pass);
 		
-		
+		window.location.reload();
+		return true;
 	}
 	
 	var logout = document.getElementById("logout");
@@ -69,5 +70,11 @@ window.onload = function () {
 		var xmlHttp = newXMLHttpRequest();
 		xmlHttp.open("POST", "Logout", true);
 		xmlHttp.send(null);
+
+		alert(window.location.pathname);
+		if(window.location.pathname.equals("/bgarden.by/account.jsp"))
+			window.location.href="index.jsp";
+		window.location.reload();
+		return false;
 	}
 } 

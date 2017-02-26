@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-.editField{
+.editField, .addField{
 	width: 20vw;
 	height: 6vw;
 	border: 1px solid #D1EEEE;
@@ -14,24 +14,24 @@
 	margin-bottom: 12vw;
 }
 
-#editForm table{
+#editForm table, .addForm table{
 	border-spacing: 0.5vw;
 	margin-left: 8vw;
 }
 
-.editButton{
+.editButton, .addButton{
 	text-align: center;
 }
 
-#editForm h1{
+#editForm h1, .addForm h1{
 	padding-left: 21vw;
 }
 
-.editField input{
+.editField input, .addField input{
 	height: 1vw;
 	font: 0.7vw Arial;
 }
 
-.editField option{
+.editField option, .addField option{
 	font: 0.7vw Arial;
 }

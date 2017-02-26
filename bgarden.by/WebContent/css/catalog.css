@@ -116,6 +116,11 @@ article footer span{
 	border: 1px solid silver;
 }
 
+.catalog button{
+	position: relative;
+	width: 5vw;
+}
+
 .deletebtn{
 	position: absolute;
 }
